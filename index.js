@@ -7,7 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({extended: false});
 app.use("/", function (request, response) {
   response.sendFile(__dirname + "/index.html");
 });
-app.use("/:bad", urlencodedParser, function (request, response) {
+app.use(urlencodedParser, function (request, response) {
   response.send("<h1>Page not found!</h1>");
 });
 
